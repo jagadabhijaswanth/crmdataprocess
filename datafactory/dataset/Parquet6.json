@@ -1,0 +1,48 @@
+{
+	"name": "Parquet6",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "processeddata",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "processeddata"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "account",
+				"type": "UTF8"
+			},
+			{
+				"name": "sector",
+				"type": "UTF8"
+			},
+			{
+				"name": "year_established",
+				"type": "UTF8"
+			},
+			{
+				"name": "revenue",
+				"type": "UTF8"
+			},
+			{
+				"name": "employees",
+				"type": "UTF8"
+			},
+			{
+				"name": "office_location",
+				"type": "UTF8"
+			},
+			{
+				"name": "subsidiary_of",
+				"type": "UTF8"
+			}
+		]
+	}
+}

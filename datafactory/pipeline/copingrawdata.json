@@ -309,6 +309,62 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "success",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "Copysalesteam",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"method": "POST",
+					"url": "https://prod-26.northcentralus.logic.azure.com:443/workflows/a56614628e8b4df08ad61805529b9eb4/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&sv=1.0&sig=4oGK7xe_h15FW_PswhZK9YFAbD26YGl2jlOrijDTg18",
+					"body": {
+						"value": "{\n    \"pipeline\":\"{@pipeline().Pipeline}\",\n    \"status\":\"successed\",\n    \"runId\":\"{@pipeline().RunId}\",\n    \"time\":\"@{utcNow()}\"\n}",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "fail",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "Copysalesteam",
+						"dependencyConditions": [
+							"Failed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"method": "POST",
+					"url": "https://prod-26.northcentralus.logic.azure.com:443/workflows/a56614628e8b4df08ad61805529b9eb4/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&sv=1.0&sig=4oGK7xe_h15FW_PswhZK9YFAbD26YGl2jlOrijDTg18",
+					"body": {
+						"value": "{\n    \"pipeline\":\"{@pipeline().Pipeline}\",\n    \"status\":\"Failed\",\n    \"runId\":\"{@pipeline().RunId}\",\n    \"time\":\"@{utcNow()}\"\n}",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"annotations": []

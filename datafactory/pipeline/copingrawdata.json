@@ -333,7 +333,7 @@
 					"method": "POST",
 					"url": "https://prod-26.northcentralus.logic.azure.com:443/workflows/a56614628e8b4df08ad61805529b9eb4/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&sv=1.0&sig=4oGK7xe_h15FW_PswhZK9YFAbD26YGl2jlOrijDTg18",
 					"body": {
-						"value": "{\n    \"pipeline\":\"{@pipeline().Pipeline}\",\n    \"status\":\"successed\",\n    \"runId\":\"{@pipeline().RunId}\",\n    \"time\":\"@{utcNow()}\"\n}",
+						"value": "{\n    \"pipeline\":\"@{pipeline().Pipeline}\",\n    \"status\":\"succeeded\",\n    \"runId\":\"@{pipeline().RunId}\",\n    \"time\":\"@{utcNow()}\"\n}",
 						"type": "Expression"
 					}
 				}
@@ -361,7 +361,7 @@
 					"method": "POST",
 					"url": "https://prod-26.northcentralus.logic.azure.com:443/workflows/a56614628e8b4df08ad61805529b9eb4/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&sv=1.0&sig=4oGK7xe_h15FW_PswhZK9YFAbD26YGl2jlOrijDTg18",
 					"body": {
-						"value": "{\n    \"pipeline\":\"{@pipeline().Pipeline}\",\n    \"status\":\"Failed\",\n    \"runId\":\"{@pipeline().RunId}\",\n    \"time\":\"@{utcNow()}\"\n}",
+						"value": "{\n    \"pipeline\":\"@{pipeline().Pipeline}\",\n    \"status\":\"Failed\",\n    \"runId\":\"@{pipeline().RunId}\",\n    \"time\":\"@{utcNow()}\"\n}",
 						"type": "Expression"
 					}
 				}
